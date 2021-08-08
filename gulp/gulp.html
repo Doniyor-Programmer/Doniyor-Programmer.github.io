@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulp guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Allow using Gulp on Windows</h1>
+    <a href="https://winnote.ru/security/160-windows-powershell-vypolnenie-scenariev-otklyucheno-v-etoy-sisteme.html" target="_blank">You can see from here</a>
+    <h2>Basics of Gulp</h2>
+    <var>gulpfile.js</var>
+    <div class="wrap">
+<pre>
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const sass = require('gulp-sass')(require('sass'));
+const cleanCSS = require('gulp-clean-css');
+const autoprefixer = require('gulp-autoprefixer');
+const rename = require("gulp-rename");
+const imagemin = require('gulp-imagemin');
+const htmlmin = require('gulp-htmlmin');
+
+gulp.task('server', function () {
+
+    browserSync({
+        server: {
+            baseDir: "dist"
+        }
+    });
+
+    gulp.watch("src/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('styles', function () {
+    return gulp.src("src/sass/**/*.+(scss|sass)")
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(rename({
+            suffix: '.min',
+            prefix: ''
+        }))
+        .pipe(autoprefixer())
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(gulp.dest("dist/css"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('watch', function () {
+    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
+    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
+});
+
+gulp.task('html', function () {
+    return gulp.src("src/*.html")
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest("dist/"));
+});
+
+gulp.task('scripts', function () {
+    return gulp.src("src/js/**/*.js")
+        .pipe(gulp.dest("dist/js"));
+});
+
+gulp.task('fonts', function () {
+    return gulp.src("src/fonts/**/*")
+        .pipe(gulp.dest("dist/fonts"));
+});
+
+gulp.task('icons', function () {
+    return gulp.src("src/icons/**/*")
+        .pipe(gulp.dest("dist/icons"));
+});
+
+gulp.task('mailer', function () {
+    return gulp.src("src/mailer/**/*")
+        .pipe(gulp.dest("dist/mailer"));
+});
+
+gulp.task('images', function () {
+    return gulp.src("src/img/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img"));
+});
+
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'icons', 'mailer', 'images'));
+</pre>
+</div>
+
+<h3>npm commands</h3>
+<div class="wrapper">
+    <kbd>npm init</kbd>
+    <h3>Just click enter more times</h3>
+    <kbd>yes</kbd>
+    <kbd>npm install gulp-cli -g</kbd>
+    <kbd>npm install gulp-cli --save-dev</kbd>
+    <kbd>npm install gulp</kbd>
+    <kbd>npm install gulp --save-dev</kbd>
+    <kbd>npm i gulp-sass</kbd>
+    <kbd>npm i gulp-sass --save-dev</kbd>
+    <kbd>npm install -g browser-sync</kbd>
+    <kbd>npm i browser-sync --save-dev</kbd>
+    <kbd>npm i gulp-autoprefixer</kbd>
+    <kbd>npm i gulp-autoprefixer --save-dev</kbd>
+    <kbd>npm i gulp-clean-css</kbd>
+    <kbd>npm i gulp-clean-css --save-dev</kbd>
+    <kbd>npm i gulp-rename</kbd>
+    <kbd>npm i gulp-rename --save-dev</kbd>
+    <kbd>npm i sass</kbd>
+    <kbd>npm i sass --save-dev</kbd>
+    <kbd>npm i gulp-imagemin</kbd>
+    <kbd>npm i gulp-htmlmin</kbd>
+    <kbd>npm install gulp-cli gulp gulp-sass browser-sync gulp-autoprefixer gulp-clean-css gulp-rename sass gulp-imagemin gulp-htmlmin --save-dev</kbd>
+    <kbd>gulp</kbd>
+</div>
+</body>
+</html>

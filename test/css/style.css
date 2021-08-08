@@ -1,0 +1,17 @@
+body {
+    background-color: magenta;
+}
+
+h1 {
+    color: steelblue;
+}
+
+b {
+    color: skyblue;
+}
+
+.ques1 {
+    width: 100%;
+    margin: 0 auto;
+    background-color: indigo;
+}

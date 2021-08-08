@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oddEven</title>
+</head>
+
+<body>
+    <script>
+let num = 2;
+
+let putNum = +prompt("Write integer number: ", "");
+
+function evenOdd() {
+    if (putNum % num == 0) {
+        document.write(`<h1>${putNum} even number</h1>`);
+    } else if (putNum % num == 1) {
+        document.write(`<h1>${putNum} odd number</h1>`);
+    } else if (putNum % num == -1) {
+        document.write(`<h1>${putNum} odd number</h1>`);
+    } else {
+        document.write(`<h1>I can't find the answer</h1>`);
+    }
+}
+
+evenOdd();
+    </script>
+</body>
+
+</html>

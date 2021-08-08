@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.6)
+        }
+
+        .ellipsoid {
+            position: absolute;
+            margin: 0 auto;
+            margin-top: 144px;
+            width: 400px;
+            height: 160px;
+            left: 36%;
+            border-radius: 100%;
+            background-color: rgba(255, 230, 0, 0.76);
+            animation-name: three;
+            animation-duration: 3.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transition: 1s all
+        }
+
+        .ellipsoid:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -64%;
+            left: 30%;
+            width: 160px;
+            height: 400px;
+            background-color: rgba(255, 230, 0, 0.76);
+            border-radius: 100%;
+            transform: rotateY(135deg)
+        }
+
+        @keyframes three {
+            100% {
+                transform: rotateY(360deg);
+                transition: 1s all
+            }
+        }
+/* 
+        @media (max-width: 767px) {
+            .ellipsoid {
+                width: 200px;
+                height: 80px;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="ellipsoid"></div>
+</body>
+
+</html>

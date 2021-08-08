@@ -1,0 +1,31 @@
+h1, h4 {
+    text-align: center;
+}
+
+h3 {
+    text-align: left;
+}
+
+img {
+    display: block;
+    float: right;
+}
+
+p {
+    text-align: left;
+}
+
+.container {
+    position: relative;
+    box-shadow: 4px 4px 4px silver;
+    display: inline-block;
+    width: 25%;
+}
+/* 
+#right {
+    float: right;
+}
+
+#left {
+    float: left;
+} */
