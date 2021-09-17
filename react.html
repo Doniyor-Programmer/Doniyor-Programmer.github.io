@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>React</title>
+	<style>
+		body {
+			background: #000;
+		}
+
+		.react {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 250px;
+			height: 36px;
+			border-radius: 100%;
+			border: 4px solid #29A1DD;
+		}
+
+		.react:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 36px;
+			height: 250px;
+			transform: translate(-50%, -50%);
+			border-radius: 100%;
+			border: 4px solid #29A1DD;
+		}
+
+		.react:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 36px;
+			height: 250px;
+			transform: translate(-50%, -50%) rotate(45deg);
+			border-radius: 100%;
+			border: 4px solid #29A1DD;	
+		}
+
+		.react__part1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 36px;
+			height: 250px;
+			transform: translate(-50%, -50%) rotate(135deg);
+			border-radius: 100%;
+			border: 4px solid #29A1DD;	
+		}
+
+		.react__part-circle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 36px;
+			height: 36px;
+			transform: translate(-50%, -50%) rotate(135deg);
+			border-radius: 100%;
+			border: 4px solid #29A1DD;	
+		}
+	</style>
+</head>
+<body>
+	<div class="react">
+		<div class="react__part1"></div>
+		<div class="react__part-circle"></div>
+	</div>
+</body>
+</html>
