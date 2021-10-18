@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tubMurakkab</title>
+</head>
+
+<body>
+    <script>
+        let data = +prompt("Write integer number > 1, else you take wrong answer:", "");
+        let arr = [];
+
+        for (let n = 1; n <= data; n++) {
+            arr[n - 1] = n;
+        }
+
+        arr.shift();
+        arr.pop();
+
+        let ok = arr.some(item => data % item === 0);
+
+        if (ok) {
+            document.write("complex number = murakkab son");
+        } else {
+            document.write("prime number = tub son");
+        }
+    </script>
+</body>
+
+</html>
