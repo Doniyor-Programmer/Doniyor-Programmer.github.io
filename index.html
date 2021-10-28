@@ -6,10 +6,10 @@
       <meta name="description" content="This is my website">
       <meta name="author" content="Doniyor-Programmer">
       <meta name="keywords" content="Doniyor-Programmer, WebSite, UzbekDasturchilari">
-     <style>body{background-color: rgb(0, 0, 0);}.wrap_load{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);z-index:10000;}.wrapper_load{display: flex; justify-content: space-between; width: 270px;}.circle_load{display: inline-block; width: 49px; height: 49px; background-color: #00c2f0; border-radius: 100%; animation-duration: 1.44s; animation-iteration-count: infinite; animation-timing-function: linear; margin: 0;}.circle:nth-child(1){animation-name: load1;}.circle:nth-child(2){animation-name: load2; animation-delay: 0.36s;}.circle:nth-child(3){animation-name: load3; animation-delay: 0.72s;}@keyframes load1{25%{margin-bottom: 64px;}75%{margin-bottom: 0; margin-top: 64px;}}@keyframes load2{25%{margin-bottom: 64px;}75%{margin-bottom: 0; margin-top: 64px;}}@keyframes load3{25%{margin-bottom: 64px;}75%{margin-bottom: 0; margin-top: 64px;}}</style>
+      <style type="text/css">* {box-sizing: border-box;margin: 0;padding: 0;}main{position: relative;background-color: khaki;width: 100vw;height: 100vh;z-index: 10000;}.super{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.main{position:relative;width:180px;height:180px;border-radius:100%;animation:anim 1.6s linear infinite}.elem{position:absolute;width:36px;height:36px;border-radius:100%;background-color:blue}.elem:first-child{top:0;left:50%;transform:translateX(-50%)}.elem:nth-child(2){top:50%;left:0;transform:translateY(-50%)}.elem:nth-child(3){bottom:0;left:50%;transform:translateX(-50%)}.elem:last-child{top:50%;right:0;transform:translateY(-50%)}@keyframes anim{50%{width:360px;height:360px}100%{width:180px;height:180px;transform:rotate(180deg)}}</style>
      <script defer>
      window.addEventListener("load", () => {
-        setTimeout(() => {document.querySelector(".super").style.display = "none";}, 9000);
+        setTimeout(() => {document.querySelector("main").style.display = "none";}, 9000);
      });
      </script>
       <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
@@ -18,13 +18,7 @@
       <title>Doniyor-Programmer</title>
    </head>
    <body>
-           <div class="wrap_load">
-         <div class="wrapper_load">
-            <div class="circle_load"></div>
-            <div class="circle_load"></div>
-            <div class="circle_load"></div>
-         </div>
-          </div>
+   <main><div class="super"><div class="main"><div class="elem"></div><div class="elem"></div><div class="elem"></div><div class="elem"></div></div></div></main>
       <audio src="correct.mp3" class="yes_sound"></audio>
       <audio src="error.mp3" class="no_sound"></audio>
       <div id="scrollBtn" title="Go to top"></div>
