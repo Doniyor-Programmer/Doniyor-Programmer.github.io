@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: whitesmoke;
+        }
+
+        .time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 300px;
+            height: 64px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: dodgerblue;
+            box-shadow: 0 0 16px orange;
+            color: papayawhip;
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="time"></div>
+    <h1 class="info1"></h1>
+    <h1 class="info2"></h1>
+    <script>
+        const wrapper = document.querySelector('.time'),
+              first = document.querySelector('.info1');
+              info = document.querySelector('.info2');
+
+        const weeks = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        function addZero(n) {
+            if (n > 9) {
+                return n;
+            } else {
+                return `0${n}`;
+            }
+        }
+
+        function time() {
+            const now = new Date();
+
+            function updateClock() {
+                let hours = addZero(now.getHours()),
+                    minutes = addZero(now.getMinutes()),
+                    seconds = addZero(now.getSeconds()),
+                    day = addZero(now.getDate()),
+                    month = addZero(now.getMonth() + 1),
+                    year = addZero(now.getFullYear()),
+                    weekName = weeks[now.getDay() - 1],
+                    monthName = months[now.getMonth()];
+
+                first.textContent = `${weekName}, ${monthName}`;
+                info.textContent = `${day}.${month}.${year}`;
+                wrapper.textContent = `${hours} : ${minutes} : ${seconds}`;
+            }
+
+            updateClock();
+        }
+
+        time();
+
+        let id = setInterval(time, 1000);
+    </script>
+</body>
+</html>
