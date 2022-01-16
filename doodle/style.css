@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.grid {
+    width: 400px;
+    height: 600px;
+    background-color: yellow;
+    position: relative;
+    font-size: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.doodler {
+    width: 60px;
+    height: 85px;
+    background-color: red;
+    position: absolute;
+    border-radius: 14px 14px 0 0;
+    z-index: 4;
+    transition: all .04s;
+}
+
+.doodler::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: #333;
+    border-radius: 100%;
+    border: 4px solid white;
+    margin: 10px;
+}
+
+.doodler::after {
+    content: "";
+    display: block;
+    position: relative;
+    left: 36px;
+    bottom: 24px;
+    width: 14px;
+    height: 14px;
+    background-color: #333;
+    border-radius: 100%;
+    border: 4px solid white;
+}
+
+.platform {
+    width: 85px;
+    height: 15px;
+    background-color: green;
+    position: absolute;
+    border-radius: 0 0 14px 14px;
+    z-index: 3;
+    box-shadow: 0 0 9px yellowgreen;
+    transition: all .04s;
+}
