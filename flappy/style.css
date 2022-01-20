@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.game-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.sky {
+    background-color: lightblue;
+    width: 500px;
+    height: 508px;
+    position: absolute;
+}
+
+.ground {
+    background-color: brown;
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    top: 508.1px;
+}
+
+.bird {
+    background-color: darkgoldenrod;
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    border-radius: 0 50% 50% 0;
+    border-left: 2.5px solid brown;
+}
+
+.bird::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border: 1.6px solid #fff;
+    border-radius: 100%;
+}
+
+.bird::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -5px;
+    top: 16px;
+    border: 7px solid transparent;
+    border-left-color: brown;
+    border-right: 0;
+}
+
+.obstacle {
+    background-color: green;
+    width: 60px;
+    height: 300px;
+    position: absolute;
+    border-radius: 10% 10% 0 0;
+}
+
+.topObstacle {
+    background-color: green;
+    width: 60px;
+    height: 300px;
+    position: absolute;
+    border-radius: 0 0 10% 10%;
+}
