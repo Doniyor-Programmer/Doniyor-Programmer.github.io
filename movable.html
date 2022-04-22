@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+
+        function movable(e) {
+            box.style.top = (e.y / window.innerHeight) * 100 + "%";
+            box.style.left = (e.x / window.innerWidth) * 100 + "%";
+            box.style.transform = 'translate(-50%, -50%)';
+        }
+
+        box.addEventListener("dblclick", () => {
+            document.addEventListener("mousemove", e => movable(e));
+        });
+
+        box.addEventListener("click", () => {
+            const styles = window.getComputedStyle(box),
+                tops = styles.top,
+                lefts = styles.left;
+            document.addEventListener("mousemove", () => {
+                box.style.top = tops;
+                box.style.left = lefts;
+            });
+        });
+    </script>
+</body>
+
+</html>
