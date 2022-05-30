@@ -1,1 +1,159 @@
-<!DOCTYPE html><html lang="en"><head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>newYear</title> <style>*{box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; color: #333;}main{width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}h1{text-align: center;}.timer{display: flex; justify-content: center; margin-top: 36px;}.item{display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 81px; height: 100px; box-shadow: 0 0 9px black; margin-right: 32px;}.item:last-child{margin-right: 0;}.time{font-size: 2.5em;}.label{font-size: 1em;}@media (max-width: 576px){main{padding: 0 9px;}.item{margin-right: 16px; border: 1px solid black; box-shadow: unset;}.time{font-size: 2em;}}</style></head><body> <main> <h1>Happy New Year!</h1> <div class="timer"> <div class="item"> <div class="days time">10</div><div class="label">Days</div></div><div class="item"> <div class="hours time">10</div><div class="label">Hours</div></div><div class="item"> <div class="minutes time">10</div><div class="label">Minutes</div></div><div class="item"> <div class="seconds time">10</div><div class="label">Seconds</div></div></div></main> <script>"use strict"; const deadline="2023-01-01"; function timeSettings(endtime){const total=Date.parse(endtime) - Date.parse(new Date()), days=Math.floor(total / (1000 * 60 * 60 * 24)), hours=Math.floor((total / (1000 * 60 * 60)) % 24), minutes=Math.floor((total / 1000 / 60) % 60), seconds=Math.floor((total / 1000) % 60); return{"total": total, "days": days, "hours": hours, "minutes": minutes, "seconds": seconds}}function getZero(num){if (num >=0 && num < 10){return `0${num}`;}else{return num;}}function startClock(selector, endtime){const timer=document.querySelector(selector), days=document.querySelector(".days"), hours=document.querySelector(".hours"), minutes=document.querySelector(".minutes"), seconds=document.querySelector(".seconds"), timeInterval=setInterval(updateClock, 1000); updateClock(); function updateClock(){const t=timeSettings(endtime); days.textContent=getZero(t.days); hours.textContent=getZero(t.hours); minutes.textContent=getZero(t.minutes); seconds.textContent=getZero(t.seconds); if (t.total <=0){clearInterval(timeInterval);}}}startClock(".timer", deadline); </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newYear</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        main {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            margin-top: 36px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 81px;
+            height: 100px;
+            box-shadow: 0 0 9px black;
+            margin-right: 32px;
+        }
+
+        .item:last-child {
+            margin-right: 0;
+        }
+
+        .time {
+            font-size: 2.5em;
+        }
+
+        .label {
+            font-size: 1em;
+        }
+
+        @media (max-width: 576px) {
+            main {
+                padding: 0 9px;
+            }
+
+            .item {
+                margin-right: 16px;
+                border: 1px solid black;
+                box-shadow: unset;
+            }
+
+            .time {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Happy New Year!</h1>
+        <div class="timer">
+            <div class="item">
+                <div class="days time">10</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="item">
+                <div class="hours time">10</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="item">
+                <div class="minutes time">10</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="item">
+                <div class="seconds time">10</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        "use strict";
+        const deadline = "2023-01-01";
+
+        function timeSettings(endtime) {
+            let days, hours, minutes, seconds;
+            const total = Date.parse(endtime) - Date.parse(new Date());
+
+            if (total <= 0) {
+                days = 0;
+                hours = 0;
+                minutes = 0;
+                seconds = 0;
+            } else {
+                days = Math.floor(total / (1000 * 60 * 60 * 24));
+            hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+            minutes = Math.floor((total / 1000 / 60) % 60);
+            seconds = Math.floor((total / 1000) % 60);
+            }
+            return {
+                "total": total,
+                "days": days,
+                "hours": hours,
+                "minutes": minutes,
+                "seconds": seconds
+            }
+        }
+
+        function getZero(num) {
+            if (num >= 0 && num < 10) {
+                return `0${num}`;
+            } else {
+                return num;
+            }
+        }
+
+        function startClock(selector, endtime) {
+            const timer = document.querySelector(selector),
+                days = document.querySelector(".days"),
+                hours = document.querySelector(".hours"),
+                minutes = document.querySelector(".minutes"),
+                seconds = document.querySelector(".seconds"),
+                timeInterval = setInterval(updateClock, 1000);
+            updateClock();
+
+            function updateClock() {
+                const t = timeSettings(endtime);
+                days.textContent = getZero(t.days);
+                hours.textContent = getZero(t.hours);
+                minutes.textContent = getZero(t.minutes);
+                seconds.textContent = getZero(t.seconds);
+                if (t.total <= 0) {
+                    clearInterval(timeInterval);
+                }
+            }
+        }
+        startClock(".timer", deadline);
+    </script>
+</body>
+
+</html>
