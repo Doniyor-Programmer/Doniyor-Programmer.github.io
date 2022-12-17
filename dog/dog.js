@@ -20,7 +20,7 @@ function useEffect() {
 
     img.src = url;
     a.href = url;
-    a.download = `dog-${counter++}`;
+    a.download = `dog-${counter++}.jpg`;
   });
 }
 
