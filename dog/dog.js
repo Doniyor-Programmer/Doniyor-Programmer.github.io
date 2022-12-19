@@ -1,7 +1,7 @@
 const img = document.querySelector("img");
 const tryIt = document.querySelector(".try");
 const a = document.querySelector("a");
-const _ = document.querySelector("a img");
+const _ = document.querySelector(".n");
 
 let counter = 1;
 
