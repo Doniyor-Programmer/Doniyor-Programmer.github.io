@@ -1,6 +1,7 @@
 const img = document.querySelector("img");
 const tryIt = document.querySelector(".try");
 const a = document.querySelector("a");
+const _ = document.querySelector("a img");
 
 let counter = 1;
 
@@ -21,6 +22,7 @@ function useEffect() {
     img.src = url;
     a.href = url;
     a.download = `dog-${counter++}.jpg`;
+    _.src = url;
   });
 }
 
