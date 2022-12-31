@@ -209,6 +209,10 @@ label {
   width: 100%;
 }
 
+.ac:hover {
+  opacity: 0.96;
+}
+
 #scrollBtn {
   width: 42px;
   height: 42px;
