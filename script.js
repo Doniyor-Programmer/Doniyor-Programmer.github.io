@@ -13,6 +13,43 @@ function $_(selector) {
   return elems;
 }
 
+const parent = document.querySelector("[data-ac]");
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => {
+    data.forEach(item => {
+      const link = document.createElement("a");
+      link.classList.add("ac");
+      link.href = item.href;
+      link.target = "_blank";
+      link.textContent = item.text;
+
+      if (item?.self) {
+        link.target = "_self";
+      }
+      if (item?.title) {
+        link.title = item?.title;
+      }
+      parent.append(link);
+    });
+  })
+  .then(() => {
+    let searchInput = $("#search"),
+      ac = $_(".ac");
+
+    searchInput.addEventListener("input", e => {
+      const value = e.target.value.toLowerCase();
+      ac.forEach(item => {
+        const isVisible = item.textContent.toLowerCase().includes(value);
+        if (!isVisible) {
+          item.style.display = "none";
+        } else {
+          item.style.display = "";
+        }
+      });
+    });
+  });
+
 window.addEventListener("load", () => {
   $("main").style.display = "none";
 }),
@@ -33,12 +70,16 @@ window.addEventListener("load", () => {
       d.classList.add("check_active");
     }
 
-    b.addEventListener("click", () => {
+    b.addEventListener("click", e => {
+      e.preventDefault();
       f.forEach((j, f, b) => {
         let c = b[0].value.trim(),
           i = b[1].value.trim();
 
-        if (("" == b[f].value || "200715" != b[2].value || a(b[f].value)) && "enough" != c.toLowerCase()) {
+        if (
+          ("" == b[f].value || "200715" != b[2].value || a(b[f].value)) &&
+          "enough" != c.toLowerCase()
+        ) {
           $(".no_sound").play();
           e.textContent = "Invalid Password or Please fill the inputs";
         } else {
@@ -55,25 +96,12 @@ window.addEventListener("load", () => {
       h.textContent = `Name Surname`;
     });
 
-    let searchInput = $("#search"),
-      ac = $_(".ac");
-
-    searchInput.addEventListener("input", e => {
-      const value = e.target.value.toLowerCase();
-      ac.forEach(item => {
-        const isVisible = item.textContent.toLowerCase().includes(value);
-        if (!isVisible) {
-          item.style.display = "none";
-        } else {
-          item.style.display = "";
-        }
-      });
-    });
-
     let c = $("#scrollBtn");
 
     window.addEventListener("scroll", () => {
-      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? (c.style.display = "block") : (c.style.display = "none");
+      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+        ? (c.style.display = "block")
+        : (c.style.display = "none");
     }),
       c.addEventListener("click", function () {
         (document.body.scrollTop = 0), (document.documentElement.scrollTop = 0);
