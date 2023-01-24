@@ -7,70 +7,13 @@
 
 main {
   position: fixed;
-  background-color: #fff;
+  background-color: #333;
   width: 100vw;
   height: 100vh;
   z-index: 10;
 }
 
-.super {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.main {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  border-radius: 100%;
-  animation: anim 1.6s linear infinite;
-}
-
-.elem {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-  background-color: #00f;
-}
-
-.elem:first-child {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.elem:nth-child(2) {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.elem:nth-child(3) {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.elem:last-child {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-@keyframes anim {
-  50% {
-    width: 360px;
-    height: 360px;
-  }
-  100% {
-    width: 180px;
-    height: 180px;
-    transform: rotate(180deg);
-  }
-}
+.wrap{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}.wrapper{display: flex; justify-content: space-between; width: 270px;}.ballon{display: inline-block; width: 49px; height: 49px; background-color: cyan; border-radius: 100%; animation-duration: 1.44s; animation-iteration-count: infinite; animation-timing-function: linear; margin: 0;}.ballon:nth-child(1){animation-name: load1;}.ballon:nth-child(2){animation-name: load2; animation-delay: 0.36s;}.ballon:nth-child(3){animation-name: load3; animation-delay: 0.72s;}@keyframes load1{25%{margin-bottom: 64px;}75%{margin-bottom: 0; margin-top: 64px;}}@keyframes load2{25%{margin-bottom: 64px;}75%{margin-bottom: 0; margin-top: 64px;}}@keyframes load3{25%{margin-bottom: 64px;}75%{margin-bottom: 0; margin-top: 64px;}}
 
 .check {
   display: flex;
