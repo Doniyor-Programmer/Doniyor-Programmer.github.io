@@ -84,5 +84,7 @@
     {"href": "parallax/parallax.html", "text": "Parallax Scroll"},
     {"href": "eyes/eyes.html", "text": "Eyes"},
     {"href": "dog/dog.html", "text": "Dog"},
-    {"href": "marvel/", "text": "Marvel-info-portal"}
+    {"href": "marvel/", "text": "Marvel-info-portal"},
+    {"href": "rgba.html", "text": "RGBA"},
+    {"href": "hsla.html", "text": "HSLA"}
 ]

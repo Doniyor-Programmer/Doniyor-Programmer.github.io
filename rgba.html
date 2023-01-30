@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<style>
+		main {
+			width: 300px;
+			display: flex;
+			margin: 0 auto;
+			flex-direction: column;
+			border: 1px solid black;
+			border-radius: 4px;
+			padding: 16px;
+			background-color: white;
+		}
+
+		h1 {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main>
+	<h1>Welcome to RGBA</h1>
+	<label>Red: 255</label>
+	<input type="range" name="Red" min="0" max="255" step="1" value="255">
+	<label>Green: 255</label>
+	<input type="range" name="Green" min="0" max="255" step="1" value="255">
+	<label>Blue: 255</label>
+	<input type="range" name="Blue" min="0" max="255" step="1" value="255">
+	<label>Alpha: 1</label>
+	<input type="range" name="Alpha" min="0" max="1" step="0.01" value="1">
+	</main>
+	<script>
+		function $_(selector) {
+			return document.querySelectorAll(selector);
+		}
+		const cls = $_("input");
+		const lbs = $_("label");
+
+		cls.forEach((cl, i, arr) => {
+			cl.addEventListener("input", () => {
+			document.body.style.backgroundColor = `rgba(${arr[0].value}, ${arr[1].value}, ${arr[2].value}, ${arr[3].value})`;
+			lbs[i].innerHTML = `${arr[i].name}: ${arr[i].value}`;
+			});
+		});
+	</script>
+</body>
+</html>
