@@ -1,4 +1,5 @@
 [
+    {"href": "chatgpt/index.html", "text": "ChatGPT"},
     {"href": "applications/calc.html", "text": "calc"},
     {"href": "applications/iteration.html", "text": "iteration"},
     {"href": "applications/jufttoq.html", "text": "oddEven"},
