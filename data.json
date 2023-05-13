@@ -1,6 +1,7 @@
 [
     {"href": "griotgpt/griotgpt.html", "text": "GriotGPT"},
     {"href": "buttonhoveranimation/buttonhoveranimation.html", "text": "buttonhoveranimation"},
+    {"href": "dialog/dialog.html", "text": "<dialog>"},
     {"href": "3d/3d.html", "text": "3d WireFrame Renderer"},
     {"href": "applications/calc.html", "text": "calc"},
     {"href": "applications/iteration.html", "text": "iteration"},
