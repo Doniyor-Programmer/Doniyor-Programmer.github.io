@@ -1,4 +1,5 @@
 [
+    {"href": "codepen/index.html", "text": "CodePen"},
     {"href": "griotgpt/griotgpt.html", "text": "GriotGPT"},
     {"href": "buttonhoveranimation/buttonhoveranimation.html", "text": "buttonhoveranimation"},
     {"href": "dialog/dialog.html", "text": "<dialog>"},
@@ -90,5 +91,6 @@
     {"href": "dog/dog.html", "text": "Dog"},
     {"href": "marvel/", "text": "Marvel-info-portal"},
     {"href": "rgba.html", "text": "RGBA"},
-    {"href": "hsla.html", "text": "HSLA"}
+    {"href": "hsla.html", "text": "HSLA"},
+    {"href": "togglebuttons/togglebuttons.html", "text": "ToggleButtons"}
 ]

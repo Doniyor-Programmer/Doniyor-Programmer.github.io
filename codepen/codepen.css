@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.codepen-in {
+    display: grid;
+    height: 50vh;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#html, #css, #js {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.codepen-out {
+    height: 50vh;
+    overflow-y: auto;
+}
+
+body {
+    overflow: hidden;
+}
