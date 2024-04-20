@@ -7,11 +7,21 @@
   </head>
   <body>
     <input class="encodeText" type="text" placeholder="Encode" />
-    <input type="number" class="encodeNum" placeholder="Encode Number" value="3">
+    <input
+      type="number"
+      class="encodeNum"
+      placeholder="Encode Number"
+      value="3"
+    />
     <button id="encodeSubmit">Encode</button>
     <h1 class="encoded"></h1>
     <input class="decodeText" type="text" placeholder="Decode" />
-    <input type="number" class="decodeNum" placeholder="Decode Number" value="3">
+    <input
+      type="number"
+      class="decodeNum"
+      placeholder="Decode Number"
+      value="3"
+    />
     <button id="decodeSubmit">Decode</button>
     <h1 class="decoded"></h1>
     <script>
@@ -39,14 +49,20 @@
           );
         });
       }
-
+      
       encodeBtn.addEventListener("click", (_) => {
-        const encodedMessage = caesarEncode(inputEncode.value, +encodeNum.value);
+        const encodedMessage = caesarEncode(
+          inputEncode.value,
+          +encodeNum.value
+        );
         encoded.textContent = encodedMessage;
       });
 
       decodeBtn.addEventListener("click", (_) => {
-        const decodedMessage = caesarDecode(inputDecode.value, +decodeNum.value);
+        const decodedMessage = caesarDecode(
+          inputDecode.value,
+          +decodeNum.value
+        );
         decoded.textContent = decodedMessage;
       });
     </script>
