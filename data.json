@@ -5,7 +5,7 @@
   { "href": "griotgpt/griotgpt.html", "text": "GriotGPT" },
   {
     "href": "buttonhoveranimation/buttonhoveranimation.html",
-    "text": "buttonhoveranimation"
+    "text": "buttonhoveranimate"
   },
   { "href": "dialog/dialog.html", "text": "<dialog>" },
   { "href": "3d/3d.html", "text": "3d WireFrame Renderer" },
@@ -22,7 +22,7 @@
   { "href": "call/call.html", "text": "Call" },
   { "href": "modal/modal.html", "text": "modal1" },
   { "href": "copy.html", "text": "copy" },
-  { "href": "animate_star.html", "text": "animate_star_mikedane" },
+  { "href": "animate_star.html", "text": "animate_star" },
   { "href": "lab2.html", "text": "lab2" },
   { "href": "spinner.html", "text": "spinner" },
   { "href": "math.html", "text": "math" },
