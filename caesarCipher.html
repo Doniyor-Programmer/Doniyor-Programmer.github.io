@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input class="encodeText" type="text" placeholder="Encode" />
+    <button id="encodeSubmit">Encode</button>
+    <h1 class="encoded"></h1>
+    <input class="decodeText" type="text" placeholder="Decode" />
+    <button id="decodeSubmit">Decode</button>
+    <h1 class="decoded"></h1>
+    <script>
+      let inputEncode = document.querySelector(".encodeText"),
+        inputDecode = document.querySelector(".decodeText"),
+        encoded = document.querySelector(".encoded"),
+        decoded = document.querySelector(".decoded"),
+        encodeBtn = document.querySelector("#encodeSubmit"),
+        decodeBtn = document.querySelector("#decodeSubmit");
+
+      function caesarEncode(str, shift) {
+        return str.toUpperCase().replace(/[A-Z]/g, function (c) {
+          return String.fromCharCode(
+            ((c.charCodeAt(0) - 65 + shift) % 26) + 65
+          );
+        });
+      }
+
+      function caesarDecode(str, shift) {
+        return str.toUpperCase().replace(/[A-Z]/g, function (c) {
+          return String.fromCharCode(
+            ((c.charCodeAt(0) - 65 - shift + 26) % 26) + 65
+          );
+        });
+      }
+
+      encodeBtn.addEventListener("click", (_) => {
+        const encodedMessage = caesarEncode(inputEncode.value, 3);
+        encoded.textContent = encodedMessage;
+      });
+
+      decodeBtn.addEventListener("click", (_) => {
+        const decodedMessage = caesarDecode(inputDecode.value, 3);
+        decoded.textContent = decodedMessage;
+      });
+    </script>
+  </body>
+</html>
