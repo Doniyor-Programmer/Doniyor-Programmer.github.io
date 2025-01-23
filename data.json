@@ -1,4 +1,7 @@
 [
+  {"href": "hemis/", "text": "hemis"},
+  {"href": "nodejs/", "text": "nodejs"},
+  {"href": "distrowatch/", "text": "distrowatch"},
   { "href": "caesarCipher.html", "text": "CaesarCipher" },
   { "href": "koran/index.html", "text": "Koran" },
   { "href": "codepen/index.html", "text": "CodePen" },
