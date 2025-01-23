@@ -1,5 +1,7 @@
 [
   {"href": "hemis/", "text": "hemis"},
+  {"href": "ovgorskiy/", "text": "ovgorskiy"},
+  {"href": "doniyor-dotcom/", "text": "doniyor-dotcom"},
   {"href": "electronjs/", "text": "electronjs"},
   {"href": "threejs/", "text": "threejs"},
   {"href": "nodejs/", "text": "nodejs"},
